@@ -1,6 +1,8 @@
 import React from 'react';
 // import './Homepage.css';
 import '../assets/css/pages/Homepage.css';
+import '../assets/css/components/button.css';
+import GlowButton from '../components/GlowButton';
 
 const Homepage = () => {
   return (
@@ -11,7 +13,14 @@ const Homepage = () => {
       <div class="twinkling"></div>
       
       {/* Section heading */}
-      <h1 className='section-heading'>Welcome to the Quiz App</h1>
+      <div className='absy'>
+       <h1 className='section-heading'>Ultimate Genius</h1>
+
+        <div className="glow-btn mybtn">Shine</div>
+        <div className="center-container">
+        <GlowButton />
+      </div>
+      </div>
     </div>
     </>
   );

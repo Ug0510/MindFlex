@@ -76,3 +76,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 *Axios
 `npm install axios`
+
+*gsap
+`npm install gsap chroma-js`
