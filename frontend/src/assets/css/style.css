@@ -5,10 +5,53 @@
 }
 .bg-forest{
     background:url(../images/forest-background.png);
-    width: 100vw;
-    height: 100;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 .w-100{
     width: 100%;
 }
+.heading-container{
+    position: relative;
+    top:0;
+    left:0;
+    background-color: red;
+}
+.heading-plate{
+    position: absolute;
+    top:-220px;
+    left:47%;
+    transform: translateX(-50%);
+    width: 600px;
+}
+
+.wooden-text {
+    position: absolute;
+    top: 150px;
+    left: -20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    mix-blend-mode: darken;
+    text-shadow: 0 0 0.05em rgba(0, 0, 0, 0.2), -0.025em 0.025em 0.1em #000,
+      -0.05em 0.05em 0.1em #000, -0.1em 0.1em 0.3em #000,
+      -0.1em 0.1em 0.5em rgba(0, 0, 0, 0.5);
+    translate: translate3d(0, 0, 0);
+    font-family: "Muli", sans-serif;
+    font-size: 48px;
+    line-height: 1;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  
+  .small {
+    font-size: 0.475em;
+  }
+  
