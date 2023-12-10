@@ -2,3 +2,46 @@ body{
     height: 100vh;
     overflow-y: hidden;
 }
+.btn-container{
+    background-color: red;
+    width: 55vw;
+    height: 100px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: space-between;
+}
+.btn-container img{
+    width: 45%;
+    position: relative;
+}
+
+.choicePlate{
+    background-image: url(../../images/wooden-plate.png);
+    width: 300px;
+    height: 100px;
+    cursor: pointer;
+}
+.plate-text{
+    position: absolute;
+    font-size: 4rem;
+    color:white;
+    font-weight: 600;
+    top:40%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.plate-text:hover{
+    color:rgba(255, 255, 255, 0.9);
+}
+.plate-text:active{
+    color:white;
+}
+.plate-text.left{
+    left:60px;
+}
+.plate-text.right{
+    right:80px;
+}

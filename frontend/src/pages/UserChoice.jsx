@@ -1,8 +1,9 @@
 import React from 'react';
 import '../assets/css/style.css';
 import '../assets/css/pages/UserChoice.css';
-import Background from '../assets/images/forest-background.png'
-import woodPlate from '../assets/images/wooden-plate.png'
+import Background from '../assets/images/forest-background.png';
+import woodPlate from '../assets/images/wooden-plate.png';
+import choicePlate from '../assets/images/choice.png';
 
 const UserChoice = () => {
   return (
@@ -16,6 +17,17 @@ const UserChoice = () => {
        <div class="small">Genius</div>
       </div>
     </div>
+
+
+    <div className="btn-container">
+      <img src={choicePlate} alt="" />
+      <p className='plate-text left'>
+        <a href=""></a>
+      </p>
+      <img src={choicePlate} alt="" />
+      <p className='plate-text right'>Teacher</p>
+    </div>
+
     </div>
     </body>
     </>

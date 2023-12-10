@@ -17,12 +17,11 @@
     position: relative;
     top:0;
     left:0;
-    background-color: red;
 }
 .heading-plate{
     position: absolute;
     top:-220px;
-    left:47%;
+    left:50%;
     transform: translateX(-50%);
     width: 600px;
 }
@@ -30,7 +29,7 @@
 .wooden-text {
     position: absolute;
     top: 150px;
-    left: -20px;
+    left: 25px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -54,4 +53,5 @@
   .small {
     font-size: 0.475em;
   }
+  
   
