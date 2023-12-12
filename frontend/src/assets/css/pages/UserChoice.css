@@ -3,7 +3,6 @@ body{
     overflow-y: hidden;
 }
 .btn-container{
-    background-color: red;
     width: 55vw;
     height: 100px;
     position: absolute;
@@ -18,7 +17,10 @@ body{
     
     position: relative;
 }
-
+.btn-container a{
+    text-decoration: none;
+    color: white;
+}
 .choicePlate{
     background-image: url(../../images/wooden-plate.png);
     width: 300px;
