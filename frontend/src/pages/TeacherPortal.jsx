@@ -4,7 +4,7 @@ const TeacherPortal = () =>
 {
     return (
         <>
-            
+            <h1>Hi, Teacher</h1>
         </>
     );
 }
