@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../assets/css/style.css';
-import woodPlate from '../assets/images/wooden-plate.png';
+import '../../assets/css/style.css';
+import woodPlate from '../../assets/images/wooden-plate.png';
 
 const StudentPortal = () => {
   const [gameCode, setGameCode] = useState(''); // Store the entered code

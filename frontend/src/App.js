@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // Import components
 import Home from './pages/Homepage';
 import UserChoice from './pages/UserChoice';
-import TeacherPortal from './pages/TeacherPortal';
-import StudentPortal from './pages/StudentPortal';
+import TeacherPortal from './pages/Teacher/TeacherPortal';
+import StudentPortal from './pages/Student/StudentPortal';
 
 function App() {
   return (
