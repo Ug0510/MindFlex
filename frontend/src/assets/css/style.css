@@ -77,6 +77,10 @@ Link{
     
   }
 
+  .wood-border::placeholder{
+    color:white;
+  }
+
   .wood-button{
     border-radius: 10px;
     background-color: #d27d2c;
