@@ -9,3 +9,9 @@
 `npm install mongodb`
 * mongoose 
 `npm install mongoose`
+*dotenv
+`npm install dotenv`
+*axios
+`npm install axios`
+*cors
+`npm install cors`
