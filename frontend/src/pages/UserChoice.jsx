@@ -22,7 +22,7 @@ const UserChoice = () => {
     <div className="btn-container">
       <img src={choicePlate} alt="" />
       <p className='plate-text left'>
-        <Link to="/StudentPortal">Student</Link>
+        <Link to="/StudentLogin">Student</Link>
       </p>
       <img src={choicePlate} alt="" />
       <p className='plate-text right'>

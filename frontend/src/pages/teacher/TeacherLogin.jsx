@@ -5,7 +5,7 @@ import '../../assets/css/style.css';
 import WoodInput from '../../components/WoodInput';
 import woodPlate from '../../assets/images/wooden-plate.png';
 
-const StudentLogin = () => {
+const TeacherLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -27,8 +27,8 @@ const StudentLogin = () => {
         return;
       }
 
-      // Make API call to login the student
-      const response = await axios.post('/api/student/login', {
+      // Make API call to login the teacher
+      const response = await axios.post('/api/teacher/login', {
         email,
         password,
       });
@@ -36,7 +36,7 @@ const StudentLogin = () => {
       if (response.status === 200) {
         console.log('Login successful');
         // Handle success, e.g., redirect to another page
-        navigate('/StudentPortal');
+        navigate('/TeacherPortal');
       } else {
         console.log('Login failed:', response.data.message);
         // Handle failure, e.g., display an error message
@@ -51,7 +51,7 @@ const StudentLogin = () => {
       <div className="heading-container">
         <img src={woodPlate} alt="" className="heading-plate" />
         <div className="wooden-text">
-          <div>Student</div>
+          <div>Teacher</div>
           <div className="small">Login</div>
         </div>
       </div>
@@ -76,4 +76,4 @@ const StudentLogin = () => {
   );
 };
 
-export default StudentLogin;
+export default TeacherLogin;
