@@ -26,7 +26,7 @@ const UserChoice = () => {
       </p>
       <img src={choicePlate} alt="" />
       <p className='plate-text right'>
-        <Link to="/TeacherPortal">Teacher</Link>
+        <Link to="/TeacherLogin">Teacher</Link>
       </p>
     </div>
 

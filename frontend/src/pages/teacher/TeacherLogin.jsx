@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'; 
 import '../../assets/css/style.css';
 import WoodInput from '../../components/WoodInput';
@@ -71,6 +71,10 @@ const TeacherLogin = () => {
         />
 
         <input type="button" className="wood-button" value="Login" style={{ marginTop: '20px' }} onClick={handleLogin} />
+
+        <p style={{ marginTop: '20px' }}>
+          New Teacher? <Link to="/TeacherRegister">Create Account</Link>
+        </p>
       </div>
     </div>
   );

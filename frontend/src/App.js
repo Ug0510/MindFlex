@@ -8,6 +8,9 @@ import StudentPortal from './pages/Student/StudentPortal';
 import StudentList from './pages/Teacher/StudentList';
 import StudentLogin from './pages/Student/StudentLogin';
 import StudentRegister from './pages/Student/StudentRegister';
+import TeacherLogin from './pages/Teacher/TeacherLogin';
+import TeacherRegister from './pages/Teacher/TeacherRegister';
+
 
 function App() {
   return (
@@ -19,6 +22,8 @@ function App() {
         <Route path="/StudentList" element={<StudentList/>} />
         <Route path="/StudentLogin" element={<StudentLogin/>} />
         <Route path="/StudentRegister" element={<StudentRegister/>} />
+        <Route path="/TeacherLogin" element={<TeacherLogin/>} />
+        <Route path="/TeacherRegister" element={<TeacherRegister/>} />
       </Routes>
     </Router>
   );
