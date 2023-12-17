@@ -14,7 +14,7 @@ const TeacherPortal = () => {
     setIsLoading(true);
     try {
       const randomCode = Math.floor(100000 + Math.random() * 900000);
-      const response = await axios.post('/api/game-codes', { code: randomCode });
+      const response = await axios.post('/api/game-codes/create', { code: randomCode });
 
       if (response.status === 201) {
         setGameCode(randomCode.toString());
@@ -57,7 +57,7 @@ const TeacherPortal = () => {
       <div className="arrow-btn">
         <p className="arrow-text">
           {gameCode !== 'Game Code' && (
-            <Link to="/StudentPortal" style={buttonStyle}>Start Quiz</Link>
+            <Link to="/StudentList" style={buttonStyle}>Start Quiz</Link>
           )}
         </p>
       </div>
