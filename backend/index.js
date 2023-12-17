@@ -33,26 +33,32 @@ app.get('/', (req, res) => {
 
 // Define API route to receive game codes
 app.post('/api/game-codes', async (req, res) => {
-  console.log(req.body);
   const { code } = req.body;
   console.log(code);
 
+  // Convert code to string
+  const codeString = code.toString();
+
   // Validate the received code
-  if (!code || code.length !== 6) {
+  if (!codeString || codeString.length !== 6) {
+    console.log(typeof(codeString));
     return res.status(400).send({ message: 'Invalid game code' });
   }
 
   // Create a new GameCode document
-  const newCode = new GameCode({ code });
+  const newCode = new GameCode({ code: codeString });
 
   try {
     await newCode.save();
+    console.log('here');
     res.status(201).send({ message: 'Game code submitted successfully!' });
   } catch (error) {
+    console.log(error);
     console.error('Error saving game code:', error);
     res.status(500).send({ message: 'Internal server error' });
   }
 });
+
 
 // Start the server
 const PORT = process.env.PORT || 8000;

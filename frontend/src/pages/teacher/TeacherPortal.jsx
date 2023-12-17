@@ -7,21 +7,28 @@ import axios from 'axios';
 const TeacherPortal = () => {
   const [gameCode, setGameCode] = useState('Game Code');
   const [buttonStyle, setButtonStyle] = useState({ cursor: 'not-allowed', color: 'gray' });
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const generateRandomCode = async () => {
-    const randomCode = Math.floor(100000 + Math.random() * 900000);
-    setGameCode(randomCode.toString());
-    setButtonStyle({ cursor: 'pointer', color: 'black' });
-  
+    setIsLoading(true);
     try {
-      const response = await axios.post('http://localhost:8000/api/game-codes', { code: randomCode });
-      console.log('here')
+      const randomCode = Math.floor(100000 + Math.random() * 900000);
+      const response = await axios.post('/api/game-codes', { code: randomCode });
+
       if (response.status === 201) {
+        setGameCode(randomCode.toString());
+        setButtonStyle({ cursor: 'pointer', color: 'black' });
+        setIsLoading(false);
+        setErrorMessage('');
         console.log('Code submitted successfully!');
       } else {
-        console.error('Error submitting code:', response.data.message);
+        setIsLoading(false);
+        setErrorMessage(response.data.message || 'An unknown error occurred.');
       }
     } catch (error) {
+      setIsLoading(false);
+      setErrorMessage(error.message);
       console.error('Error submitting code:', error);
     }
   };
@@ -39,12 +46,19 @@ const TeacherPortal = () => {
       {/* Code generation field and button  */}
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
         <input type="text" className='wood-border' value={gameCode} style={{ maxWidth: '30vw', cursor: 'not-allowed' }} />
-        <input type="button" className="wood-button" value="Generate Code" onClick={generateRandomCode} />
+        {isLoading ? (
+          <span className="loading-indicator">Generating code...</span>
+        ) : (
+          <input type="button" className="wood-button" value="Generate Code" onClick={generateRandomCode} />
+        )}
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
       </div>
 
       <div className="arrow-btn">
-        <p className="arrow-text" >
+        <p className="arrow-text">
+          {gameCode !== 'Game Code' && (
             <Link to="/StudentPortal" style={buttonStyle}>Start Quiz</Link>
+          )}
         </p>
       </div>
     </div>
