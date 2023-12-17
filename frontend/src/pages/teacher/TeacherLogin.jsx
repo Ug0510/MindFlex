@@ -35,6 +35,16 @@ const TeacherLogin = () => {
 
       if (response.status === 200) {
         console.log('Login successful');
+
+        // Extract the token from the response data
+        const token = response.data.token; // Assumes the token is included in the response data
+        const userId = response.data.userId;
+
+
+        // Save the token in localStorage
+        localStorage.setItem('token', token);
+        localStorage.setItem('userId',userId);
+        
         // Handle success, e.g., redirect to another page
         navigate('/TeacherPortal');
       } else {

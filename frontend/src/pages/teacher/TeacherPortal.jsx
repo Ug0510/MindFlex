@@ -10,11 +10,13 @@ const TeacherPortal = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
+  const userId = localStorage.getItem('userId');
+
   const generateRandomCode = async () => {
     setIsLoading(true);
     try {
       const randomCode = Math.floor(100000 + Math.random() * 900000);
-      const response = await axios.post('/api/game-codes/create', { code: randomCode });
+      const response = await axios.post('/api/game-codes/create', { code: randomCode, userId: userId});
 
       if (response.status === 201) {
         setGameCode(randomCode.toString());
@@ -57,7 +59,7 @@ const TeacherPortal = () => {
       <div className="arrow-btn">
         <p className="arrow-text">
           {gameCode !== 'Game Code' && (
-            <Link to="/StudentList" style={buttonStyle}>Start Quiz</Link>
+            <Link to={`/StudentList/${gameCode}`} style={buttonStyle}>Start Quiz</Link>
           )}
         </p>
       </div>

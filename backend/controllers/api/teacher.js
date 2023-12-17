@@ -47,7 +47,7 @@ module.exports.login = async function (req, res) {
     // Here 'udit_gupta' is the secret key 
     const token = jwt.sign({ sub: teacher._id }, 'udit_gupta', { expiresIn: '1h' });
 
-    res.status(200).json({ token });
+    res.status(200).json({ token, userId:teacher._id.toString() });
   } catch (error) {
     console.error('Error logging in:', error);
     res.status(500).json({ message: 'Internal server error' });
