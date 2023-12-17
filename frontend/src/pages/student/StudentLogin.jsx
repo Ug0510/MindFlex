@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios'; 
 import '../../assets/css/style.css';
 import WoodInput from '../../components/WoodInput';
 import woodPlate from '../../assets/images/wooden-plate.png';
@@ -7,6 +8,8 @@ import woodPlate from '../../assets/images/wooden-plate.png';
 const StudentLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const navigate = useNavigate();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -16,11 +19,31 @@ const StudentLogin = () => {
     setPassword(e.target.value);
   };
 
-  const handleLogin = () => {
-    // Implement your login logic here
-    console.log('Email:', email);
-    console.log('Password:', password);
-    // Add your authentication logic, e.g., calling an API
+  const handleLogin = async () => {
+    try {
+      // Basic client-side validation
+      if (!email || !password) {
+        console.log('Please fill in all fields');
+        return;
+      }
+
+      // Make API call to login the student
+      const response = await axios.post('/api/student/login', {
+        email,
+        password,
+      });
+
+      if (response.status === 200) {
+        console.log('Login successful');
+        // Handle success, e.g., redirect to another page
+        navigate('/StudentPortal');
+      } else {
+        console.log('Login failed:', response.data.message);
+        // Handle failure, e.g., display an error message
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+    }
   };
 
   return (

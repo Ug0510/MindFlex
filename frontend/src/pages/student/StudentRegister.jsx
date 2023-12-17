@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import '../../assets/css/style.css';
 import WoodInput from '../../components/WoodInput';
 import woodPlate from '../../assets/images/wooden-plate.png';
@@ -9,6 +10,8 @@ const StudentRegister = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+
+  const navigate = useNavigate();
 
   const handleFullNameChange = (e) => {
     setFullName(e.target.value);
@@ -26,13 +29,38 @@ const StudentRegister = () => {
     setConfirmPassword(e.target.value);
   };
 
-  const handleRegister = () => {
-    // Implement your registration logic here
-    console.log('Full Name:', fullName);
-    console.log('Email:', email);
-    console.log('Password:', password);
-    console.log('Confirm Password:', confirmPassword);
-    // Add your registration logic, e.g., calling an API
+  const handleRegister = async () => {
+    try {
+      // Basic client-side validation
+      if (!fullName || !email || !password || !confirmPassword) {
+        console.log('Please fill in all fields');
+        return;
+      }
+
+      // Check if passwords match
+      if (password !== confirmPassword) {
+        console.log('Passwords do not match');
+        return;
+      }
+
+      // Make API call to register the student
+      const response = await axios.post('/api/student/register', {
+        fullName,
+        email,
+        password,
+      });
+
+      if (response.status === 200) {
+        console.log('Student registered successfully');
+        // Handle success
+        navigate('/StudentLogin');
+      } else {
+        console.log('Registration failed:', response.data.message);
+        // Handle failure
+      }
+    } catch (error) {
+      console.error('Error during registration:', error);
+    }
   };
 
   return (
@@ -46,7 +74,7 @@ const StudentRegister = () => {
       </div>
 
       {/* Registration form */}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'end', height: '100vh',paddingBottom:'50px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'end', height: '100vh', paddingBottom: '50px' }}>
         <WoodInput
           value={fullName}
           onChange={handleFullNameChange}
