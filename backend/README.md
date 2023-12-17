@@ -15,3 +15,9 @@
 `npm install axios`
 *cors
 `npm install cors`
+*bycrypt
+`npm install bcrypt`
+*jwt
+`npm install jsonwebtoken`
+*passport & passport jwt
+`npm install passport passport-jwt`
