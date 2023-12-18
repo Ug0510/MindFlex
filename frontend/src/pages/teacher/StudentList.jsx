@@ -1,26 +1,44 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const StudentList = () => {
   const navigate = useNavigate();
 
   const [students, setStudents] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const gameCode = localStorage.getItem('game-code');
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
-    // Replace this with your actual logic to fetch the list of students based on the generated code.
-    // This is just a demo using a fake API call.
-    fetch('/api/students?code=YOUR_GENERATED_CODE')
-      .then((response) => response.json())
-      .then((data) => {
-        setStudents(data.students);
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`/api/game-codes/students?code=${gameCode}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        setStudents(response.data.students);
         setIsLoading(false);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error('Error fetching students:', error);
         setIsLoading(false);
-      });
-  }, []);
+      }
+    };
+
+    // Fetch data initially
+    fetchData();
+
+    // Set up an interval to fetch data every 2 seconds
+    const intervalId = setInterval(() => {
+      fetchData();
+    }, 2000);
+
+    // Clean up the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, [gameCode, token]);
+
 
   const startQuiz = async () => {
     // Implement your logic here to send a request to the server to start the quiz.
@@ -30,10 +48,13 @@ const StudentList = () => {
     // On successful quiz start, redirect the teacher to the desired page (e.g., quiz dashboard).
     await fetch('/api/quiz/start', {
       method: 'POST',
-      body: JSON.stringify({ code: 'YOUR_GENERATED_CODE' }),
+      body: JSON.stringify({ code: gameCode }),
     })
       .then((response) => response.json())
-      .then(() => navigate('/quiz-dashboard'));
+      .then(() => navigate('/quiz-dashboard'))
+      .catch((error) => {
+        console.error('Error starting quiz:', error);
+      });
   };
 
   return (
@@ -47,7 +68,7 @@ const StudentList = () => {
         ) : (
           <ul>
             {students.map((student) => (
-              <li key={student.id}>{student.name}</li>
+              <li key={student._id}>{student.fullName}</li>
             ))}
           </ul>
         )

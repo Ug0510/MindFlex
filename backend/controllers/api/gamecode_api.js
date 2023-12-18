@@ -67,3 +67,28 @@ module.exports.joinGame = async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 };
+
+// controller to fetch the list of students joining the quiz
+module.exports.getStudents = async function(req, res){
+    try {
+      const code = req.query.code;
+
+      // Validate the received code
+      if (!code || code.length !== 6) {
+        return res.status(400).json({ message: 'Invalid game code' });
+      }
+
+      // Find the game code in the database
+      const gameCode = await GameCode.findOne({ code }).populate('students');;
+
+      if (!gameCode) {
+        return res.status(404).json({ message: 'Game not found' });
+      }
+
+      // Return the students array
+      return res.status(200).json({ students: gameCode.students });
+    } catch (error) {
+      console.error('Error fetching students:', error);
+      return res.status(500).json({ message: 'Internal server error' });
+    }
+};

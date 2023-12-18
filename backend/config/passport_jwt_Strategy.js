@@ -27,7 +27,6 @@ const configurePassportJWT = () => {
   // Teacher JWT strategy
   passport.use('teacher-jwt', new JwtStrategy(jwtOptions, async (payload, done) => {
     try {
-      console.log(payload);
       const teacher = await Teacher.findById(payload.sub);
       if (teacher) {
         return done(null, teacher);

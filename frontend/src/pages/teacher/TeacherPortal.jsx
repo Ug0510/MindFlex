@@ -30,6 +30,7 @@ const TeacherPortal = () => {
         setButtonStyle({ cursor: 'pointer', color: 'black' });
         setIsLoading(false);
         setErrorMessage('');
+        localStorage.setItem('game-code',randomCode);
         console.log('Code submitted successfully!');
       } else {
         setIsLoading(false);
@@ -66,7 +67,7 @@ const TeacherPortal = () => {
       <div className="arrow-btn">
         <p className="arrow-text">
           {gameCode !== 'Game Code' && (
-            <Link to={`/StudentList/${gameCode}`} style={buttonStyle}>Start Quiz</Link>
+            <Link to={'/StudentList'} style={buttonStyle}>Start Quiz</Link>
           )}
         </p>
       </div>
