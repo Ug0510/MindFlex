@@ -10,13 +10,20 @@ const TeacherPortal = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
+  const token = localStorage.getItem('token');
   const userId = localStorage.getItem('userId');
+
+  const headers = {
+    Authorization: `Bearer ${token}`,
+    'Content-Type': 'application/json',
+  };
+
 
   const generateRandomCode = async () => {
     setIsLoading(true);
     try {
       const randomCode = Math.floor(100000 + Math.random() * 900000);
-      const response = await axios.post('/api/game-codes/create', { code: randomCode, userId: userId});
+      const response = await axios.post('/api/game-codes/create', { code: randomCode, teacherId: userId},{headers});
 
       if (response.status === 201) {
         setGameCode(randomCode.toString());

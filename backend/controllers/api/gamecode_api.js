@@ -6,7 +6,7 @@ module.exports.createGameCode = async function (req, res) {
 
   try {
     // Get the teacher ID from the authenticated user (you need to implement authentication)
-    const teacherId = req.body.userId;
+    const teacherId = req.body.teacherId;
     console.log(teacherId);
 
     // Convert code to a string
@@ -26,6 +26,44 @@ module.exports.createGameCode = async function (req, res) {
     res.status(201).json({ message: 'Game code submitted successfully!' });
   } catch (error) {
     console.error('Error saving game code:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
+
+// Add a new method to handle joining a game
+module.exports.joinGame = async (req, res) => {
+  const code = req.body.code;
+  const studentId = req.body.studentId;
+
+  try {
+    // Validate the received code
+    if (!code || code.length !== 6) {
+      return res.status(400).json({ message: 'Invalid game code' });
+    }
+
+    // Find the game code in the database
+    const gameCode = await GameCode.findOne({ code });
+
+    if (!gameCode) {
+      return res.status(404).json({ message: 'Game not found' });
+    }
+
+    // Check if the student is already present in the array
+    if (gameCode.students.includes(studentId)) {
+      return res.status(400).json({ message: 'Student already joined this game' });
+    }
+
+    // Add the student to the gameCode's students array
+    if (studentId) {
+      gameCode.students.push(studentId);
+    }
+
+    // Save the updated game code
+    await gameCode.save();
+
+    res.status(200).json({ message: 'Successfully joined the game' });
+  } catch (error) {
+    console.error('Error joining the game:', error);
     res.status(500).json({ message: 'Internal server error' });
   }
 };

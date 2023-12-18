@@ -36,6 +36,9 @@ const StudentLogin = () => {
       if (response.status === 200) {
         console.log('Login successful');
         // Handle success, e.g., redirect to another page
+        const studentId = response.data.studentId;
+        localStorage.setItem('studentId',studentId);
+        localStorage.setItem('token',response.data.token);
         navigate('/StudentPortal');
       } else {
         console.log('Login failed:', response.data.message);

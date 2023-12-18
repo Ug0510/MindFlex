@@ -26,7 +26,6 @@ module.exports.register = async function(req, res){
 
     // Save the student to the database
     await newStudent.save();
-
     res.status(200).json({ message: 'Student registered successfully' });
   } catch (error) {
     console.error('Error registering student:', error);
@@ -55,7 +54,7 @@ module.exports.login = async function(req, res){
     // 'udit_gupta' is secret key here
     const token = jwt.sign({ studentId: student._id }, 'udit_gupta', { expiresIn: '1h' });
 
-    res.status(200).json({ token });
+    res.status(200).json({ token, studentId: student._id  });
   } catch (error) {
     console.error('Error logging in:', error);
     res.status(500).json({ message: 'Internal server error' });

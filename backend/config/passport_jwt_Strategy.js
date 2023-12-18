@@ -13,7 +13,7 @@ const configurePassportJWT = () => {
   // Student JWT strategy
   passport.use('student-jwt', new JwtStrategy(jwtOptions, async (payload, done) => {
     try {
-      const student = await Student.findById(payload.sub);
+      const student = await Student.findById(payload.studentId);
       if (student) {
         return done(null, student);
       } else {
@@ -27,6 +27,7 @@ const configurePassportJWT = () => {
   // Teacher JWT strategy
   passport.use('teacher-jwt', new JwtStrategy(jwtOptions, async (payload, done) => {
     try {
+      console.log(payload);
       const teacher = await Teacher.findById(payload.sub);
       if (teacher) {
         return done(null, teacher);
