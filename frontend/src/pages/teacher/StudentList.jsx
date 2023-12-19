@@ -7,7 +7,7 @@ const StudentList = () => {
 
   const [students, setStudents] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const gameCode = localStorage.getItem('game-code');
+  const gameCode = localStorage.getItem('teachersGameCode');
   const token = localStorage.getItem('token');
 
   useEffect(() => {
@@ -41,20 +41,23 @@ const StudentList = () => {
 
 
   const startQuiz = async () => {
-    // Implement your logic here to send a request to the server to start the quiz.
-    // You might need to send the generated code again or any other relevant data.
-    // Consider displaying a loading indicator or confirmation message while the request is pending.
-
-    // On successful quiz start, redirect the teacher to the desired page (e.g., quiz dashboard).
-    await fetch('/api/quiz/start', {
-      method: 'POST',
-      body: JSON.stringify({ code: gameCode }),
-    })
-      .then((response) => response.json())
-      .then(() => navigate('/quiz-dashboard'))
-      .catch((error) => {
-        console.error('Error starting quiz:', error);
-      });
+    try {
+      // Send a request to the server to start the quiz
+      const response = await axios.post('/api/quiz/start', { code: gameCode });
+  
+      // Check if the quiz started successfully
+      if (response.status === 200) {
+        console.log('Quiz started successfully');
+        // Redirect the teacher to the desired page (e.g., quiz dashboard)
+        navigate('/quiz-dashboard');
+      } else {
+        console.error('Error starting quiz:', response.data.message);
+        // Handle failure or display an error message
+      }
+    } catch (error) {
+      console.error('Error starting quiz:', error.message);
+      // Handle failure or display an error message
+    }
   };
 
   return (

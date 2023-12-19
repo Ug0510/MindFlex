@@ -10,7 +10,7 @@ import StudentLogin from './pages/Student/StudentLogin';
 import StudentRegister from './pages/Student/StudentRegister';
 import TeacherLogin from './pages/Teacher/TeacherLogin';
 import TeacherRegister from './pages/Teacher/TeacherRegister';
-
+import WaitingPage from './pages/Student/WaitingPage';
 
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
         <Route path="/StudentRegister" element={<StudentRegister/>} />
         <Route path="/TeacherLogin" element={<TeacherLogin/>} />
         <Route path="/TeacherRegister" element={<TeacherRegister/>} />
+        <Route path='/WaitingPage' element={<WaitingPage/>}/>
       </Routes>
     </Router>
   );

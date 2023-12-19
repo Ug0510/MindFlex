@@ -39,6 +39,10 @@ const StudentPortal = () => {
 
       if (response.status === 200) {
         console.log('Game code verified successfully!');
+
+        //save the gameCode 
+        localStorage.setItem('studentGameCode',gameCode);
+
         // Redirect to the waiting page or the next step in your flow
         navigate('/WaitingPage'); // Update the route accordingly
       } else {

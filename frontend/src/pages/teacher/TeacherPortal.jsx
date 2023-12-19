@@ -30,7 +30,7 @@ const TeacherPortal = () => {
         setButtonStyle({ cursor: 'pointer', color: 'black' });
         setIsLoading(false);
         setErrorMessage('');
-        localStorage.setItem('game-code',randomCode);
+        localStorage.setItem('teachersGameCode',randomCode);
         console.log('Code submitted successfully!');
       } else {
         setIsLoading(false);

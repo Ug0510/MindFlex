@@ -4,6 +4,7 @@ const gameCodeSchema = new mongoose.Schema({
   code: { type: String, required: true, unique: true },
   teacher: { type: mongoose.Schema.Types.ObjectId, ref: 'Teacher', required: true },
   students: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Student' }],
+  isStarted: { type: Boolean, default: false }, // Set default value to false
   expiresAt: { type: Date, default: Date.now, expires: 60 * 60 }, // Expires in 1 hour
 });
 

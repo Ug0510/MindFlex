@@ -92,3 +92,32 @@ module.exports.getStudents = async function(req, res){
       return res.status(500).json({ message: 'Internal server error' });
     }
 };
+
+
+// Add a new method to check the status of the quiz
+module.exports.checkQuizStatus = async (req, res) => {
+  const code = req.query.code;
+
+  try {
+    // Validate the received code
+    if (!code || code.length !== 6) {
+      return res.status(400).json({ message: 'Invalid game code' });
+    }
+
+    // Find the game code in the database
+    const gameCode = await GameCode.findOne({ code });
+
+    if (!gameCode) {
+      return res.status(404).json({ message: 'Game not found' });
+    }
+
+    if(gameCode.isStarted == True)
+    {
+      res.status(200).json({ isQuizStarted: gameCode.isStarted });
+    }
+
+  } catch (error) {
+    console.error('Error checking quiz status:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
