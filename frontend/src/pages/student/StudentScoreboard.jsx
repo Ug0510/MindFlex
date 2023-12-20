@@ -32,9 +32,9 @@ const StudentScoreboard = () => {
   }, []);
 
   const getAmusingMessage = (score) => {
-    if (score >= 80) {
+    if (score >= 15) {
       return "Congratulations, you're a genius! 🎉 Thanks for playing and enjoy your victory!";
-    } else if (score >= 50) {
+    } else if (score >= 10) {
       return "Great job! You're pretty smart! 🚀 Thanks for playing, hope you had fun!";
     } else {
       return "Nice try! Even the best have off days. 😅 Thanks for playing, and better luck next time!";

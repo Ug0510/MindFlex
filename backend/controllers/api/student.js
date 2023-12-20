@@ -65,7 +65,6 @@ module.exports.login = async function(req, res){
 module.exports.saveScore = async function(req, res){
   try {
     const { studentId, score } = req.body;
-    console.log(req.body);
 
     // Check if studentId and score are present in the request body
     if (!studentId || !score) {
@@ -87,6 +86,31 @@ module.exports.saveScore = async function(req, res){
     await student.save();
 
     return res.status(200).json({ message: 'Score saved successfully.' });
+  } catch (error) {
+    console.error('Error saving score:', error);
+    return res.status(500).json({ message: 'Internal server error.' });
+  }
+};
+
+
+module.exports.getScore = async function(req, res){
+  try {
+    const { studentId } = req.body;
+
+    // Check if studentId and score are present in the request body
+    if (!studentId) {
+      return res.status(400).json({ message: 'Invalid request. Missing studentId or score.' });
+    }
+
+    // Find the student by ID
+    const student = await Student.findById(studentId);
+
+    // Check if the student exists
+    if (!student) {
+      return res.status(404).json({ message: 'Student not found.' });
+    }
+
+    return res.status(200).json({score:student.score});
   } catch (error) {
     console.error('Error saving score:', error);
     return res.status(500).json({ message: 'Internal server error.' });
