@@ -30,7 +30,7 @@ const QuizPage = () => {
   const [inputWord, setInputWord] = useState('');
   const [correctWords, setCorrectWords] = useState([]);
   const [score, setScore] = useState(0);
-  const [timer, setTimer] = useState(20); // 2 minutes in seconds
+  const [timer, setTimer] = useState(120); // 2 minutes in seconds
 
   const { words, isLoading, wordExists } = useWordChecker('en');
 
@@ -58,7 +58,8 @@ const QuizPage = () => {
     console.log('here');
     const usedLetters = new Set([...inputWord]);
     console.log('now');
-    const validWord = [...inputWord].every((letter) => letters.includes(letter) );
+    let validWord = [...inputWord].every((letter) => letters.includes(letter) );
+    validWord = validWord && !(correctWords.includes(inputWord));
     console.log(validWord,inputWord);
     if (inputWord.trim() !== '' && validWord) {
       if (wordExists(inputWord)) {
@@ -80,7 +81,7 @@ const QuizPage = () => {
     const response = await axios.post('/api/student/save-score', { studentId, score });
     console.log(response.data); // Handle the response as needed
 
-    const code = localStorage.getItem('gameCode');
+    const code = localStorage.getItem('studentGameCode');
     //giving status to change state to finish quiz
     const response2 = await axios.post('/api/quiz/finish-quiz',{code:code});
     console.log(response2.data);

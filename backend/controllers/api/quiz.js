@@ -51,7 +51,7 @@ module.exports.checkQuizStarting = async (req, res) => {
 module.exports.endQuiz = async function(req,res)
 {
   const {code } = req.body;
-  console.log(code);
+  console.log('code',code);
 
 // Find the game code in the database
   const gameCode = await GameCode.findOne({ code });

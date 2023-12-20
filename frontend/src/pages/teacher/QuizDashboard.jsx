@@ -11,11 +11,13 @@ const QuizDashboard = () => {
   const [scores, setScores] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const code = localStorage.getItem('teachersGameCode');
+
   useEffect(() => {
     const fetchScores = async () => {
       try {
         // Fetch scores from the server using the game code
-        const response = await axios.get(`/api/quiz/scores?gameCode=849690`);
+        const response = await axios.get(`/api/quiz/scores?gameCode=${code}`);
         console.log(response.data);
 
         // Extract scores from the response

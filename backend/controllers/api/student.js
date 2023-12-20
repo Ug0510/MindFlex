@@ -64,7 +64,7 @@ module.exports.login = async function(req, res){
 
 module.exports.saveScore = async function(req, res){
   try {
-    const { studentId, score } = req.body;
+    const { studentId, score, code } = req.body;
 
     // Check if studentId and score are present in the request body
     if (!studentId || !score) {
