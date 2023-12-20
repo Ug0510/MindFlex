@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Walter+Turncoat);
+
 *{
     margin:0;
     padding:0;
@@ -117,4 +119,82 @@ Link{
     padding:1rem 0;
     color: #0000005b;
     /* width: fit-content; */
+  }
+
+  .broad-pillar
+  {
+    background: url(../images/pillar-big-space.png);
+    height:65vh;
+    width: 55vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  .pillar-board-container{
+    /* position: relative;
+    top:7vh;
+    left:5.5vw; */
+    width: 22vw;
+    height: 50vh;
+    /* background-color: red;s */
+    margin-top:7vh;
+  }
+  .pillar-board{
+    background:url(../images/scoreboard-top.png);
+    background-size: cover;
+    margin:auto;
+    width: 80%;
+    height: 100px;
+    list-style-type: none;
+    position: relative;
+  }
+  .pillar-board:not(:first-child)
+  {
+    background:url(../images/scoreboard-mid.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 90px;
+  }
+  .pillar-board:last-child
+  {
+    background:url(../images/scoreboard-end.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .pillar-board p{
+    font-family: "Walter Turncoat", cursive;
+    font-size: 28px;
+    text-align: center;       
+    font-weight: 600;
+    color:white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    letter-spacing: 3px;
+  }
+  .pillar-board .heading{
+  letter-spacing: 5px;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  color:rgb(69, 226, 82);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  .pillar-board p:not(.heading){
+    /* background-color: pink; */
+    padding-top:15px;
+    
+  }
+  .pillar-board p:nth-child(2)
+  {
+    font-size: 12px;
+    font-style: italic;
+    color:yellow;
+    padding-top: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 1px;
+  }
+  .pillar-board .score{
+    font-size: 44px;
   }
