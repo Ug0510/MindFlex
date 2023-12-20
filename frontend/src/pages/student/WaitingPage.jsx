@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import StandingBoard from '../../assets/images/standing-board.png';
+import woodPlate from '../../assets/images/wooden-plate.png';
+import "../../assets/css/components/greenboard.css";
 
 const WaitingPage = () => {
   const navigate = useNavigate();
@@ -31,10 +34,50 @@ const WaitingPage = () => {
   }, [isQuizStarted, navigate]);
 
   return (
-    <div>
-      <h1>Waiting for Quiz to Start...</h1>
-      {/* Add any waiting page content here */}
+    <div className="bg-forest">
+      <div className="heading-container">
+        <img src={woodPlate} alt="" className="heading-plate" />
+        <div className="wooden-text">
+          <div>Waiting</div>
+          <div className="small">Room</div>
+        </div>
+      </div>
+
+      {/* <img src={StandingBoard} alt="" id='instruction-board'/> */}
+
+      <div className="greenboard-body" contentEditable={true} style={{maxWidth:"80vw",maxHeight:"60vh",marginTop:"250px"}}>
+      Wait till others come.....
+      <br />
+      <ol>
+        <li>only requires an HTML tag and body tag</li>
+        <li>
+          thanks to{' '}
+          <a
+            href="http://stackoverflow.com/a/19258938/1654250"
+            target="_blank"
+            title="Stackoverflow Link"
+            contentEditable={false}
+          >
+            RhinoWalrus
+          </a>{' '}
+          for his help :)
+        </li>
+        <li>
+          thanks to{' '}
+          <a
+            href="https://codepen.io/HugoGiraudel/pen/layxv"
+            target="_blank"
+            title="CodePen Link"
+            contentEditable={false}
+          >
+            HugoGiraudel
+          </a>{' '}
+          for his awesome work :)
+        </li>
+      </ol>
+      <br />
     </div>
+</div>
   );
 };
 
