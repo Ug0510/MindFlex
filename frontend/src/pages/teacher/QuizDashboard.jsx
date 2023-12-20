@@ -12,18 +12,23 @@ const QuizDashboard = () => {
     const fetchScores = async () => {
       try {
         // Fetch scores from the server using the game code
-        const response = await axios.get(`/api/quiz/scores?gameCode=${gameCode}`);
+        const response = await axios.get(`/api/quiz/scores?gameCode=849690`);
+        console.log(response.data);
 
         // Extract scores from the response
         const { scores } = response.data;
 
-        if(scores != -1)
+        if(scores !== -1)
         {
             // Set the scores state
         setScores(scores);
 
         // Set loading to false
         setIsLoading(false);
+
+
+        //stoping the loop to reload again
+        clearInterval(intervalId);
         }
       } catch (error) {
         console.error('Error fetching scores:', error);
@@ -36,7 +41,7 @@ const QuizDashboard = () => {
     // Check scores every 5 seconds until the quiz is finished
     const intervalId = setInterval(() => {
       fetchScores();
-    }, 5000);
+    }, 2000);
 
     // Clear the interval when the component unmounts
     return () => clearInterval(intervalId);
@@ -52,8 +57,8 @@ const QuizDashboard = () => {
           <h2>Scores</h2>
           <ul>
             {scores.map((score) => (
-              <li key={score.studentId}>
-                Student ID: {score.studentId}, Score: {score.score} points
+              <li key={score._id}>
+                Student Name: {score.fullName}, Email: {score.email}, Score: {score.score} points
               </li>
             ))}
           </ul>

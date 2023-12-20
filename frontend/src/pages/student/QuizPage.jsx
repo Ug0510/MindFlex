@@ -79,6 +79,12 @@ const QuizPage = () => {
     const studentId = localStorage.getItem('studentId');
     const response = await axios.post('/api/student/save-score', { studentId, score });
     console.log(response.data); // Handle the response as needed
+
+    const code = localStorage.getItem('gameCode');
+    //giving status to change state to finish quiz
+    const response2 = await axios.post('/api/quiz/finish-quiz',{code:code});
+    console.log(response2.data);
+
     // Redirect to the scoreboard page
     navigate('/StudentScoreboard');
   };
