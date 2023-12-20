@@ -29,7 +29,7 @@ const WaitingPage = () => {
 
   useEffect(() => {
     if (isQuizStarted) {
-      navigate('/quiz');
+      navigate('/QuizPage');
     }
   }, [isQuizStarted, navigate]);
 

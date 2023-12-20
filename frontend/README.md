@@ -82,3 +82,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 *mui material pack
 `npm install @mui/material @emotion/react @emotion/styled`
+
+*word validator 
+`npm install react-word-checker`

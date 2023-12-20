@@ -11,6 +11,8 @@ import StudentRegister from './pages/Student/StudentRegister';
 import TeacherLogin from './pages/Teacher/TeacherLogin';
 import TeacherRegister from './pages/Teacher/TeacherRegister';
 import WaitingPage from './pages/Student/WaitingPage';
+import QuizPage from './pages/Student/QuizPage';
+import StudentScoreboard from './pages/Student/StudentScoreboard';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path="/TeacherLogin" element={<TeacherLogin/>} />
         <Route path="/TeacherRegister" element={<TeacherRegister/>} />
         <Route path='/WaitingPage' element={<WaitingPage/>}/>
+        <Route path='/QuizPage' element={<QuizPage/>}/>
+        <Route path='/StudentScoreboard' element={<StudentScoreboard/>}/>
       </Routes>
     </Router>
   );

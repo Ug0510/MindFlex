@@ -82,13 +82,13 @@ const StudentPortal = () => {
         />
       </div>
 
-      <div className="arrow-btn">
+      {/* <div className="arrow-btn">
         <p className="arrow-text">
-          <Link to="/StudentPortal1" style={buttonStyle} onClick={handleEnterQuiz}>
+          <Link to="/" style={buttonStyle} onClick={handleEnterQuiz}>
             Enter Quiz
           </Link>
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };
