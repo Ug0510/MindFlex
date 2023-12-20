@@ -121,6 +121,20 @@ Link{
     /* width: fit-content; */
   }
 
+  /* CSS for pillar and inner components */
+
+  .both-side-pillar{
+    background: url(../images/pillar-both-sided.png);
+    height:75vh;
+    width: 40vw;
+    align-self: baseline;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
   .broad-pillar
   {
     background: url(../images/pillar-big-space.png);
