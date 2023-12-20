@@ -49,7 +49,7 @@ const StudentList = () => {
       if (response.status === 200) {
         console.log('Quiz started successfully');
         // Redirect the teacher to the desired page (e.g., quiz dashboard)
-        navigate('/quiz-dashboard');
+        navigate('/QuizDashboard');
       } else {
         console.error('Error starting quiz:', response.data.message);
         // Handle failure or display an error message

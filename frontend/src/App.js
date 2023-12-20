@@ -13,6 +13,7 @@ import TeacherRegister from './pages/Teacher/TeacherRegister';
 import WaitingPage from './pages/Student/WaitingPage';
 import QuizPage from './pages/Student/QuizPage';
 import StudentScoreboard from './pages/Student/StudentScoreboard';
+import QuizDashboard from './pages/Teacher/QuizDashboard';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path='/WaitingPage' element={<WaitingPage/>}/>
         <Route path='/QuizPage' element={<QuizPage/>}/>
         <Route path='/StudentScoreboard' element={<StudentScoreboard/>}/>
+        <Route path='/QuizDashboard' element={<QuizDashboard/>}/>
       </Routes>
     </Router>
   );
