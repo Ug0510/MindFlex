@@ -23,7 +23,7 @@ const QuizDashboard = () => {
         // Extract scores from the response
         const { scores } = response.data;
 
-        if(scores !== -1)
+        if(scores.length !== 0)
         {
             // Set the scores state
         setScores(scores);
@@ -60,7 +60,7 @@ const QuizDashboard = () => {
       <div style={{position:'absolute',height:'70vh',bottom:'0',left:'0',width:'100vw',display:'flex',justifyContent:'center',alignItems:'end'}}>
         
         <div className="broad-pillar">
-        {isLoading ? (
+        {scores.length === 0 ? (
              <>
              <div className="pillar-board-container">
               <div className="pillar-board" style={{width:'100%'}}>

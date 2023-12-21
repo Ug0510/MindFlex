@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import "../../assets/css/components/greenboard.css";
+import { Link, useNavigate } from 'react-router-dom';
 
 const StudentScoreboard = () => {
   const [score, setScore] = useState(null);
   const [message, setMessage] = useState('');
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchStudentScore = async () => {
@@ -41,10 +45,26 @@ const StudentScoreboard = () => {
     }
   };
 
+  const playAgain = () =>{
+    navigate('/StudentPortal')
+  }
+
   return (
-    <div>
-      <h1>Your Score: {score !== null ? `${score} points` : 'Loading...'}</h1>
-      <p>{message}</p>
+    <div className='bg-forest'>
+      <div className="greenboard-body" contentEditable={false} style={{maxWidth:"80vw",maxHeight:"60vh",marginTop:"100px",textAlign:'center'}}>
+      <span style={{fontSize:'62px'}}>SCOREBOARD</span>
+      <br />
+      <div>
+        <div>Your Score: {score !== null ? `${score} points` : 'Loading...'}</div>
+        <br />
+        <div>{message}</div>
+      </div>
+      <br />
+    </div>
+
+    <Link to={'/StudentPortal'} className='wood-button' style={{textAlign:'center',marginTop:'60px',textDecoration:'none'}}>Play Again</Link>
+
+    {/* <input type="text" value="Play Again" className='wood-button' style={{textAlign:'center',marginTop:'100px'}} onClick={playAgain()}/> */}
     </div>
   );
 };
