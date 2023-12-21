@@ -9,8 +9,8 @@ const Homepage = () => {
     <>
     <div className="homepage-container">
       {/* Stars */}
-      <div class="stars"></div>
-      <div class="twinkling"></div>
+      <div className="stars"></div>
+      <div className="twinkling"></div>
       
       {/* Section heading */}
       <div className='absy'>

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import WoodInput from '../../components/WoodInput'; // Assume you have a WoodInput component
+import WoodInput from '../../components/WoodInput'; 
 import axios from 'axios';
 import { useWordChecker } from 'react-word-checker';
 import { useNavigate } from 'react-router-dom';
-
+import '../../assets/css/style.css';
+import Timer from '../../assets/images/clock.png'
 
 const QuizPage = () => {
 
@@ -91,30 +92,33 @@ const QuizPage = () => {
   };
 
   return (
-    <div>
-      <div>
+    <div className='bg-forest' style={{display:'flex',justifyContent:'center',alignItems:'start',padding:'10vh 0 0 15vw',flexDirection:'column'}}>
+      <div style={{marginLeft:'1.5vw',marginBottom:'4vh'}}>
         {/* Display letters */}
         {letters.map((letter, index) => (
-          <div key={index} style={{ display: 'inline-block', margin: '5px', fontSize: '20px' }}>
-            {letter}
+          <div key={index} id='letter-block' style={{ display: 'inline-block', margin: '5px', fontSize: '20px' }}>
+            <span>{letter}</span>
           </div>
         ))}
       </div>
       <div>
         {/* Display timer, score, and input field */}
-        <div>Timer: {timer}s</div>
-        <div>Score: {score}</div>
+        <div id='timer'><span>
+          {/* <img src={Timer} alt="" style={{width:'40px'}}/> */}
+          {timer}<span className='s'>s</span></span></div>
+        <div id='quiz-score'>Score: {score}</div>
         <WoodInput
           placeholder="Enter your word"
           value={inputWord}
           onChange={handleInputChange}
           onEnter={handleWordSubmit}
+          style={{maxWidth:'40vw',width:"40vw"}}
         />
-        <button onClick={handleWordSubmit}>Submit</button>
+        <button onClick={handleWordSubmit} className='wood-button' style={{marginTop:'5vh'}}>Submit</button>
       </div>
-      <div>
+      <div id='corrected-words'>
         {/* Display correct words */}
-        <div>Correct Words:</div>
+        <span className='heading'>Correct Words:</span>
         <ul>
           {correctWords.map((word, index) => (
             <li key={index}>{word}</li>

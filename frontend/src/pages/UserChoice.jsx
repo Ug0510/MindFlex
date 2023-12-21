@@ -12,9 +12,9 @@ const UserChoice = () => {
     <div className='bg-forest'>
     <div className="heading-container">
       <img src={woodPlate} alt="" className='heading-plate' />
-      <div class="wooden-text">
+      <div className="wooden-text">
         <div>Ultimate</div>
-       <div class="small">Genius</div>
+       <div className="small">Genius</div>
       </div>
     </div>
 
