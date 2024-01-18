@@ -304,3 +304,13 @@ Link{
     font-weight:600;
     
   }
+
+  @media screen and (max-width:480px) {
+    .heading-plate{
+      width: 500px;
+  }
+  .wooden-text {
+    top: 90px;
+    font-size: 36px;
+  }
+  }

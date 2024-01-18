@@ -20,11 +20,11 @@ const UserChoice = () => {
 
 
     <div className="btn-container">
-      <img src={choicePlate} alt="" />
+      <img src={choicePlate} alt="" className='wplate'/>
       <p className='plate-text left'>
         <Link to="/StudentLogin">Student</Link>
       </p>
-      <img src={choicePlate} alt="" />
+      <img src={choicePlate} alt="" className='wplate'/>
       <p className='plate-text right'>
         <Link to="/TeacherLogin">Teacher</Link>
       </p>
