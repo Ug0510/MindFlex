@@ -9,6 +9,7 @@ Link{
   text-decoration: none;
   color:inherit;
 }
+/* CSS for background  */
 .bg-forest{
     background:url(../images/forest-background.png);
     background-size: cover;
@@ -19,6 +20,8 @@ Link{
 .w-100{
     width: 100%;
 }
+
+/* CSS for header */
 .heading-container{
 
     background-image: url(../images/wooden-plate.png);
@@ -49,10 +52,12 @@ Link{
     text-transform: uppercase;
     white-space: nowrap;
   }
-  
   .small {
     font-size: 0.475em;
   }
+  
+
+
   
   .wood-border{
     width: 84%;

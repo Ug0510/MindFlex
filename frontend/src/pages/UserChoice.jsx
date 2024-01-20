@@ -18,7 +18,7 @@ const UserChoice = () => {
     </div>
 
 
-    {/* <div className="btn-container">
+    <div className="btn-container">
       <img src={choicePlate} alt="" className='wplate'/>
       <p className='plate-text left'>
         <Link to="/StudentLogin">Student</Link>
@@ -27,7 +27,7 @@ const UserChoice = () => {
       <p className='plate-text right'>
         <Link to="/TeacherLogin">Teacher</Link>
       </p>
-    </div> */}
+    </div>
 
     </div>
     </body>
