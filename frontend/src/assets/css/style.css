@@ -136,17 +136,20 @@ body a{
   .arrow-btn{
     position: absolute;
     background: url(../images/arrow.png);
-    bottom:-20px;
+    /* bottom:-20px; */
+    bottom: 0px;
     background-size: cover;
-    left:50%;
+    right: 1%;
     transform: translateX(-50%) scaleX(-1);
     height: 30vh;
     width: 30vh;
   }
   .arrow-text{
     transform: scaleX(-1);
-    margin-top:30px;
-    margin-right: 30px;
+    /* margin-top:30px;
+    margin-right: 30px; */
+    text-align: center;
+    margin-top: 1rem;
     font-size: 2.2rem;
     font-family: 'Luckiest Guy', cursive;
     cursor: not-allowed;
@@ -168,7 +171,6 @@ body a{
     display: flex;
     justify-content: center;
     background-position: center bottom;
-    border: 1px solid grey;
   }
 
   .broad-pillar
@@ -181,17 +183,15 @@ body a{
     position: relative;
     display: flex;
     justify-content: center;
-    /* border: 1px solid grey;*/
     background-position: center bottom; 
   }
   .pillar-board-container{
-    /* position: relative;
-    top:7vh;
-    left:5.5vw; */
+    margin: auto;
     width: 22vw;
     height: 50vh;
     /* background-color: red;s */
-    margin-top:11vh;
+    margin-top:6vh;
+   
   }
   .pillar-board{
     background:url(../images/scoreboard-top.png);
@@ -201,6 +201,7 @@ body a{
     height: 100px;
     list-style-type: none;
     position: relative;
+
   }
   .pillar-board:not(:first-child)
   {
@@ -223,33 +224,33 @@ body a{
     color:white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     letter-spacing: 3px;
-  }
-  .pillar-board .heading{
-  letter-spacing: 5px;
-  position: absolute;
-  bottom: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  color:rgb(69, 226, 82);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-  }
-  .pillar-board p:not(.heading){
-    /* background-color: pink; */
-    padding-top:15px;
-    
-  }
-  .pillar-board p:nth-child(2)
-  {
-    font-size: 12px;
-    font-style: italic;
-    color:yellow;
-    padding-top: 10px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    letter-spacing: 1px;
-  }
-  .pillar-board .score{
-    font-size: 44px;
-  }
+    }
+    .pillar-board .heading{
+    letter-spacing: 5px;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    color:rgb(69, 226, 82);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+    .pillar-board p:not(.heading){
+      /* background-color: pink; */
+      padding-top:15px;
+      
+    }
+    .pillar-board p:nth-child(2)
+    {
+      font-size: 12px;
+      font-style: italic;
+      color:yellow;
+      padding-top: 10px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      letter-spacing: 1px;
+    }
+    .pillar-board .score{
+      font-size: 44px;
+    }
 
 
 
@@ -347,14 +348,13 @@ body a{
     .heading-container{
       height: 17vmax;
       width: 450px;
-  }
-  .wooden-text {
+    }
+    .wooden-text {
       margin-left:2rem;
       margin-top: -9.5rem;
     }
     .heading-container .small {
       font-size: 2.2vmax;
-
     }
     .input-div{
       padding-bottom: 5.5rem;
@@ -362,25 +362,59 @@ body a{
     .heading-plate{
       width: 500px;
     }
-  .wood-border{
-    height: 70px;
-    font-size: 1.2rem;
-  }
-  .heading-container{
-    transform: translateX(-30px);
-}
-#corrected-words{
-  height: 70vh;
-}
-#letter-block{
-  padding: 15px 25px;
-}
-.letter-blocks-div{
-  display: flex;
-  margin-right: 5rem;
-  border: 1px solid red;
-
-}
+    .wood-border{
+      height: 70px;
+      font-size: 1.2rem;
+    }
+    .heading-container{
+      transform: translateX(-30px);
+    }
+    #corrected-words{
+      height: 70vh;
+    }
+    #letter-block{
+      padding: 15px 25px;
+    }
+    .letter-blocks-div{
+      display: flex;
+      margin-right: 5rem;
+      border: 1px solid red;
+    }
+    
+    .both-side-pillar{
+      /* height:55vh;
+      width: 55vw; */
+      height: 25rem;
+      width: 25rem;
+    }
+    .broad-pillar
+    {
+      background: url(../images/pillar-big-space.png);
+      /* height:55vh;
+      width: 55vw; */
+      height: 25rem;
+      width: 25rem;
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      background-position: center bottom; 
+    }
+    .pillar-board-container{
+      margin-top:5vh;
+    }
+    .pillar-board p{
+      font-size: 1.1rem;
+    }
+    .arrow-btn{
+      height: 25vh;
+      width: 25vh;
+      right: -10%;
+    }  
+    .arrow-text{
+      font-size: 2rem;
+    }
   } 
 
   @media (max-width: 768px) {

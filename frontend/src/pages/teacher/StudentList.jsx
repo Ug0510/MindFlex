@@ -77,8 +77,8 @@ const StudentList = () => {
              <>
              <div className="pillar-board-container">
               <div className="pillar-board" style={{width:'100%',marginTop:'15px'}}>
-                <p style={{paddingTop:'30px',marginLeft:'-20px'}}>Noone Join yet...</p>
-                <p style={{marginLeft:'-25px'}}>(Distribute quiz code)</p>
+                <p className='pillar-board-p1' style={{paddingTop:'30px',marginLeft:'-20px'}}>Noone Join yet...</p>
+                <p className='pillar-board-p2' style={{marginLeft:'-25px'}}>(Distribute quiz code)</p>
               </div>
              </div>
              </>
@@ -102,7 +102,7 @@ const StudentList = () => {
       </div>
       
 
-      <div className="arrow-btn" style={{left:'auto',right:'10px'}}>
+      <div className="arrow-btn" >
         <p className="arrow-text">
           <Link to={''} style={buttonStyle} onClick={startQuiz} disabled={students.length === 0}>Start Quiz</Link>
         </p>
