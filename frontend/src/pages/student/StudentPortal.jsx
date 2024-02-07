@@ -64,7 +64,7 @@ const StudentPortal = () => {
       </div>
 
       {/* Code input field and button */}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+      <div className='input-div'>
         <input
           type="text"
           className="wood-border"

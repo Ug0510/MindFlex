@@ -23,14 +23,14 @@ Link{
 
 /* CSS for header */
 .heading-container{
-
-    background-image: url(../images/wooden-plate.png);
+    /* background-image: url(../images/wooden-plate.png); */
     background-repeat: no-repeat;
     height: 20vmax;
     width: 500px;
-    /* border: 2px solid black; */
+
     background-size: contain;
-    margin:auto;
+    margin: auto;
+    transform: translateX(-50px);
 }
 .wooden-text {
     display: flex;
@@ -45,13 +45,14 @@ Link{
       -0.1em 0.1em 0.5em rgba(0, 0, 0, 0.5);
     translate: translate3d(0, 0, 0);
     font-family: "Muli", sans-serif;
-    font-size: 3.4vmax;
+    font-size: 3vmax;
     line-height: 1;
-    margin-left:1rem;
-    font-weight: 900;
     text-align: center;
+    margin-left:4rem;
+    font-weight: 900;
     text-transform: uppercase;
     white-space: nowrap;
+    margin-top: -240px;
   }
   .heading-container .small {
     font-size: 1.8vmax
@@ -62,7 +63,18 @@ body a{
   text-decoration: none !important;
   color:inherit !important;
 }
+/* ------------------
+    Input DIV CSS
+-------------------- */
 
+.input-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding-bottom: 350px;
+}
 
 /* ------------------
     Buttons CSS 
@@ -84,24 +96,22 @@ body a{
   transform: translateY(-10%);
   cursor: pointer;
 }
-  .wood-border{
-    width: 84%;
-    border-radius: 50px;
-    height: 80px;
-    position: relative;
-    font-size: 2rem;
-    color: white;
-    line-height: 2;
-    letter-spacing: 0.2em;
-    text-shadow: 3px 0px 2px #222222;
-    text-align: center;
-    z-index: 3;
-
-    box-shadow: inset 0 0 16px 4px #343134;
-    border: 10px groove #d27d2c;
-    background-color: #4e4a4e;
-    
-  }
+.wood-border{
+  width: 84%;
+  border-radius: 50px;
+  height: 80px;
+  position: relative;
+  font-size: 2rem;
+  color: white;
+  line-height: 2;
+  letter-spacing: 0.2em;
+  text-shadow: 3px 0px 2px #222222;
+  text-align: center;
+  z-index: 3;
+  box-shadow: inset 0 0 16px 4px #343134;
+  border: 10px groove #d27d2c;
+  background-color: #4e4a4e;
+}
 
   .wood-border::placeholder{
     color:white;
@@ -149,14 +159,16 @@ body a{
 
   .both-side-pillar{
     background: url(../images/pillar-both-sided.png);
-    height:75vh;
+    height:65vh;
     width: 40vw;
-    align-self: baseline;
+    /* align-self: baseline; */
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
     display: flex;
     justify-content: center;
+    background-position: center bottom;
+    border: 1px solid grey;
   }
 
   .broad-pillar
@@ -169,6 +181,8 @@ body a{
     position: relative;
     display: flex;
     justify-content: center;
+    /* border: 1px solid grey;*/
+    background-position: center bottom; 
   }
   .pillar-board-container{
     /* position: relative;
@@ -177,7 +191,7 @@ body a{
     width: 22vw;
     height: 50vh;
     /* background-color: red;s */
-    margin-top:7vh;
+    margin-top:11vh;
   }
   .pillar-board{
     background:url(../images/scoreboard-top.png);
@@ -329,14 +343,89 @@ body a{
     
   }
 
-  @media screen and (max-width:480px) {
-    .heading-plate{
-      width: 500px;
+  @media (max-width: 992px) {
+    .heading-container{
+      height: 17vmax;
+      width: 450px;
   }
   .wooden-text {
-    top: 90px;
-    font-size: 36px;
+      margin-left:2rem;
+      margin-top: -9.5rem;
+    }
+    .heading-container .small {
+      font-size: 2.2vmax;
+
+    }
+    .input-div{
+      padding-bottom: 5.5rem;
+    }
+    .heading-plate{
+      width: 500px;
+    }
+  .wood-border{
+    height: 70px;
+    font-size: 1.2rem;
   }
+  .heading-container{
+    transform: translateX(-30px);
+}
+#corrected-words{
+  height: 70vh;
+}
+#letter-block{
+  padding: 15px 25px;
+}
+.letter-blocks-div{
+  display: flex;
+  margin-right: 5rem;
+  border: 1px solid red;
+
+}
+  } 
+
+  @media (max-width: 768px) {
+    .heading-container{
+      width: 380px;
+      margin: auto;
+      transform: translateX(-10px);
+    }
+    
+    .input-div{
+      padding-bottom: 3.5rem;
+    }
+    .heading-plate{
+      width: 380px;
+    }
+    .wood-border{
+      height: 60px;
+      font-size: 1rem;
+    }
+    .wooden-text {
+      font-size: 3vmax;
+      margin-left:0.8rem;
+      margin-top: -120px;
+    }
+    .p-text{
+      font-size: 0.8rem;
+    }
+    .wood-button{
+      font-size: 1em;
+    }
   }
 
-  
+  @media(max-width:576px){
+    .heading-container{
+      width: 280px;
+      margin: auto;
+      transform: translateX(-10px);
+  }
+    .heading-plate{
+      width: 280px;
+    }
+    .wood-border{
+      font-size: 0.8em;
+    }
+    .wooden-text {
+      margin-top: -6.0rem;
+    }
+  }
