@@ -404,7 +404,7 @@ body a{
     .arrow-btn{
       height: 25vh;
       width: 25vw;
-      right: -10%;
+      right: -6rem;
     }  
     .arrow-text{
       font-size: 2rem;
@@ -459,12 +459,13 @@ body a{
       font-size: 1.1rem;
     }
     .arrow-btn{
-      height: 9rem;
-      width: 9rem;
+      height: 8.5rem;
+      width: 8.5rem;
       right: -4rem;
     }  
     .arrow-text{
       font-size: 1rem;
+      margin-top: 0.5rem;
     }
   }
 
@@ -482,5 +483,20 @@ body a{
     }
     .wooden-text {
       margin-top: -6.0rem;
+    }
+    .both-side-pillar{
+      /* height:55vh;
+      width: 55vw; */
+      height: 20rem;
+      width: 20rem;
+    }
+    .arrow-btn{
+      height: 7rem;
+      width: 7rem;
+      right: -3.4rem;
+    }  
+    .arrow-text{
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
     }
   }
