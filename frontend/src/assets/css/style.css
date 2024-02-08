@@ -198,7 +198,7 @@ body a{
     background-size: cover;
     margin:auto;
     width: 80%;
-    height: 100px;
+    height: 7rem;
     list-style-type: none;
     position: relative;
 
@@ -209,16 +209,18 @@ body a{
     background-size: contain;
     background-repeat: no-repeat;
     height: 90px;
+   
   }
   .pillar-board:last-child
   {
     background:url(../images/scoreboard-end.png);
     background-size: contain;
     background-repeat: no-repeat;
+    
   }
   .pillar-board p{
     font-family: "Walter Turncoat", cursive;
-    font-size: 28px;
+    font-size: 2rem;
     text-align: center;       
     font-weight: 600;
     color:white;
@@ -244,7 +246,7 @@ body a{
       font-size: 12px;
       font-style: italic;
       color:yellow;
-      padding-top: 10px;
+      padding-top: 1rem;
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       letter-spacing: 1px;
     }
@@ -378,7 +380,6 @@ body a{
     .letter-blocks-div{
       display: flex;
       margin-right: 5rem;
-      border: 1px solid red;
     }
     
     .both-side-pillar{
@@ -388,28 +389,21 @@ body a{
       width: 25rem;
     }
     .broad-pillar
-    {
-      background: url(../images/pillar-big-space.png);
-      /* height:55vh;
-      width: 55vw; */
-      height: 25rem;
-      width: 25rem;
-      background-size: contain;
-      background-repeat: no-repeat;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      background-position: center bottom; 
+    {height:55vh;
+      width: 55vw; 
+      
     }
     .pillar-board-container{
-      margin-top:5vh;
+      margin-top:2.6rem;
+      height: 18rem;
+      border: 1px solid red;
     }
     .pillar-board p{
       font-size: 1.1rem;
     }
     .arrow-btn{
       height: 25vh;
-      width: 25vh;
+      width: 25vw;
       right: -10%;
     }  
     .arrow-text{
@@ -444,6 +438,33 @@ body a{
     }
     .wood-button{
       font-size: 1em;
+    }
+    
+    .both-side-pillar{
+      /* height:55vh;
+      width: 55vw; */
+      height: 20rem;
+      width: 20rem;
+    }
+    .broad-pillar
+    {height:55vh;
+      width: 55vw; 
+      
+    }
+    .pillar-board-container{
+      margin-top:2rem;
+      height: 38vh;
+    }
+    .pillar-board p{
+      font-size: 1.1rem;
+    }
+    .arrow-btn{
+      height: 9rem;
+      width: 9rem;
+      right: -4rem;
+    }  
+    .arrow-text{
+      font-size: 1rem;
     }
   }
 
