@@ -67,7 +67,7 @@ const TeacherLogin = () => {
       </div>
 
       {/* Code generation field and button  */}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+      <div className='input-div'>
         <WoodInput
           value={email}
           onChange={handleEmailChange}

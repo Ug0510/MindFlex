@@ -18,6 +18,9 @@
 * concurrently
 `npm install concurrently --save-dev`
 
+* bootstrap
+`npm i bootstrap`
+
 ## Modules in this project
 
 * Student Module

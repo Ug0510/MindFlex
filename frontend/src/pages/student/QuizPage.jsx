@@ -93,7 +93,7 @@ const QuizPage = () => {
 
   return (
     <div className='bg-forest' style={{display:'flex',justifyContent:'center',alignItems:'start',padding:'10vh 0 0 15vw',flexDirection:'column'}}>
-      <div style={{marginLeft:'1.5vw',marginBottom:'4vh'}}>
+      <div style={{marginLeft:'1.5vw',marginBottom:'4vh'}} className='letter-blocks-div'>
         {/* Display letters */}
         {letters.map((letter, index) => (
           <div key={index} id='letter-block' style={{ display: 'inline-block', margin: '5px', fontSize: '20px' }}>

@@ -66,7 +66,7 @@ const StudentRegister = () => {
   return (
     <div className="bg-forest">
       <div className="heading-container">
-        <img src={woodPlate} alt="" className="heading-plate" />
+       <img src={woodPlate} className='heading-plate'/>
         <div className="wooden-text">
           <div>Student</div>
           <div className="small">Register</div>
@@ -74,7 +74,7 @@ const StudentRegister = () => {
       </div>
 
       {/* Registration form */}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'end', height: '100vh', paddingBottom: '50px' }}>
+      <div className='input-div'>
         <WoodInput
           value={fullName}
           onChange={handleFullNameChange}
@@ -84,24 +84,24 @@ const StudentRegister = () => {
           value={email}
           onChange={handleEmailChange}
           placeholder="Email"
-          style={{ marginTop: '20px' }}
+          style={{ marginTop: '5px' }}
         />
         <WoodInput
           value={password}
           onChange={handlePasswordChange}
           placeholder="Password"
-          style={{ marginTop: '20px' }}
+          style={{ marginTop: '5px' }}
         />
         <WoodInput
           value={confirmPassword}
           onChange={handleConfirmPasswordChange}
           placeholder="Confirm Password"
-          style={{ marginTop: '20px' }}
+          style={{ marginTop: '5px' }}
         />
 
         <input type="button" className="wood-button" value="Register" style={{ marginTop: '20px' }} onClick={handleRegister} />
 
-        <p style={{ marginTop: '20px' }}>
+        <p style={{ marginTop: '5px' }} className='p-text'>
           Already have an account? <Link to="/StudentLogin">Login here</Link>
         </p>
       </div>

@@ -74,7 +74,7 @@ const TeacherRegister = () => {
       </div>
 
       {/* Registration form */}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'end', height: '100vh', paddingBottom: '50px' }}>
+      <div className='input-div'>
         <WoodInput
           value={fullName}
           onChange={handleFullNameChange}

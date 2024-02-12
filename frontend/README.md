@@ -74,14 +74,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 * React Router 
 `npm install react-router-dom@latest`
 
-*Axios
+* Axios
 `npm install axios`
 
-*gsap
+* gsap
 `npm install gsap chroma-js`
 
-*mui material pack
+* mui material pack
 `npm install @mui/material @emotion/react @emotion/styled`
 
-*word validator 
+* word validator 
 `npm install react-word-checker`
+
+* bootstrap
+`npm i bootstrap`

@@ -9,6 +9,7 @@ Link{
   text-decoration: none;
   color:inherit;
 }
+/* CSS for background  */
 .bg-forest{
     background:url(../images/forest-background.png);
     background-size: cover;
@@ -19,23 +20,19 @@ Link{
 .w-100{
     width: 100%;
 }
-.heading-container{
-    position: relative;
-    top:0;
-    left:0;
-}
-.heading-plate{
-    position: absolute;
-    top:-220px;
-    left:50%;
-    transform: translateX(-50%);
-    width: 600px;
-}
 
+/* CSS for header */
+.heading-container{
+    /* background-image: url(../images/wooden-plate.png); */
+    background-repeat: no-repeat;
+    height: 20vmax;
+    width: 500px;
+
+    background-size: contain;
+    margin: auto;
+    transform: translateX(-50px);
+}
 .wooden-text {
-    position: absolute;
-    top: 150px;
-    left: 25px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -48,36 +45,73 @@ Link{
       -0.1em 0.1em 0.5em rgba(0, 0, 0, 0.5);
     translate: translate3d(0, 0, 0);
     font-family: "Muli", sans-serif;
-    font-size: 48px;
+    font-size: 3vmax;
     line-height: 1;
-    font-weight: 900;
     text-align: center;
+    margin-left:4rem;
+    font-weight: 900;
     text-transform: uppercase;
     white-space: nowrap;
+    margin-top: -240px;
   }
-  
-  .small {
-    font-size: 0.475em;
+  .heading-container .small {
+    font-size: 1.8vmax
   }
-  
-  .wood-border{
-    width: 84%;
-    border-radius: 50px;
-    height: 80px;
-    position: relative;
-    font-size: 2rem;
-    color: white;
-    line-height: 2;
-    letter-spacing: 0.2em;
-    text-shadow: 3px 0px 2px #222222;
-    text-align: center;
-    z-index: 3;
 
-    box-shadow: inset 0 0 16px 4px #343134;
-    border: 10px groove #d27d2c;
-    background-color: #4e4a4e;
-    
-  }
+/* For Links */
+body a{
+  text-decoration: none !important;
+  color:inherit !important;
+}
+/* ------------------
+    Input DIV CSS
+-------------------- */
+
+.input-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding-bottom: 350px;
+}
+
+/* ------------------
+    Buttons CSS 
+-------------------- */
+.choice-btn{
+  background-image: url(../images/choice.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-width: calc(571px*0.8);
+  min-height: calc(121px*0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.choice-btn span{
+  font-size: 3.5vmax;
+  color:white;
+  font-weight: 600;
+  transform: translateY(-10%);
+  cursor: pointer;
+}
+.wood-border{
+  width: 84%;
+  border-radius: 50px;
+  height: 80px;
+  position: relative;
+  font-size: 2rem;
+  color: white;
+  line-height: 2;
+  letter-spacing: 0.2em;
+  text-shadow: 3px 0px 2px #222222;
+  text-align: center;
+  z-index: 3;
+  box-shadow: inset 0 0 16px 4px #343134;
+  border: 10px groove #d27d2c;
+  background-color: #4e4a4e;
+}
 
   .wood-border::placeholder{
     color:white;
@@ -102,17 +136,20 @@ Link{
   .arrow-btn{
     position: absolute;
     background: url(../images/arrow.png);
-    bottom:-20px;
+    /* bottom:-20px; */
+    bottom: 0px;
     background-size: cover;
-    left:50%;
+    right: 1%;
     transform: translateX(-50%) scaleX(-1);
     height: 30vh;
     width: 30vh;
   }
   .arrow-text{
     transform: scaleX(-1);
-    margin-top:30px;
-    margin-right: 30px;
+    /* margin-top:30px;
+    margin-right: 30px; */
+    text-align: center;
+    margin-top: 1rem;
     font-size: 2.2rem;
     font-family: 'Luckiest Guy', cursive;
     cursor: not-allowed;
@@ -125,14 +162,15 @@ Link{
 
   .both-side-pillar{
     background: url(../images/pillar-both-sided.png);
-    height:75vh;
+    height:65vh;
     width: 40vw;
-    align-self: baseline;
+    /* align-self: baseline; */
     background-size: contain;
     background-repeat: no-repeat;
     position: relative;
     display: flex;
     justify-content: center;
+    background-position: center bottom;
   }
 
   .broad-pillar
@@ -145,24 +183,25 @@ Link{
     position: relative;
     display: flex;
     justify-content: center;
+    background-position: center bottom; 
   }
   .pillar-board-container{
-    /* position: relative;
-    top:7vh;
-    left:5.5vw; */
+    margin: auto;
     width: 22vw;
     height: 50vh;
     /* background-color: red;s */
-    margin-top:7vh;
+    margin-top:6vh;
+   
   }
   .pillar-board{
     background:url(../images/scoreboard-top.png);
     background-size: cover;
     margin:auto;
     width: 80%;
-    height: 100px;
+    height: 7rem;
     list-style-type: none;
     position: relative;
+
   }
   .pillar-board:not(:first-child)
   {
@@ -170,48 +209,50 @@ Link{
     background-size: contain;
     background-repeat: no-repeat;
     height: 90px;
+   
   }
   .pillar-board:last-child
   {
     background:url(../images/scoreboard-end.png);
     background-size: contain;
     background-repeat: no-repeat;
+    
   }
   .pillar-board p{
     font-family: "Walter Turncoat", cursive;
-    font-size: 28px;
+    font-size: 2rem;
     text-align: center;       
     font-weight: 600;
     color:white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     letter-spacing: 3px;
-  }
-  .pillar-board .heading{
-  letter-spacing: 5px;
-  position: absolute;
-  bottom: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  color:rgb(69, 226, 82);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-  }
-  .pillar-board p:not(.heading){
-    /* background-color: pink; */
-    padding-top:15px;
-    
-  }
-  .pillar-board p:nth-child(2)
-  {
-    font-size: 12px;
-    font-style: italic;
-    color:yellow;
-    padding-top: 10px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    letter-spacing: 1px;
-  }
-  .pillar-board .score{
-    font-size: 44px;
-  }
+    }
+    .pillar-board .heading{
+    letter-spacing: 5px;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    color:rgb(69, 226, 82);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+    .pillar-board p:not(.heading){
+      /* background-color: pink; */
+      padding-top:15px;
+      
+    }
+    .pillar-board p:nth-child(2)
+    {
+      font-size: 12px;
+      font-style: italic;
+      color:yellow;
+      padding-top: 1rem;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      letter-spacing: 1px;
+    }
+    .pillar-board .score{
+      font-size: 44px;
+    }
 
 
 
@@ -305,12 +346,157 @@ Link{
     
   }
 
-  @media screen and (max-width:480px) {
+  @media (max-width: 992px) {
+    .heading-container{
+      height: 17vmax;
+      width: 450px;
+    }
+    .wooden-text {
+      margin-left:2rem;
+      margin-top: -9.5rem;
+    }
+    .heading-container .small {
+      font-size: 2.2vmax;
+    }
+    .input-div{
+      padding-bottom: 5.5rem;
+    }
     .heading-plate{
       width: 500px;
+    }
+    .wood-border{
+      height: 70px;
+      font-size: 1.2rem;
+    }
+    .heading-container{
+      transform: translateX(-30px);
+    }
+    #corrected-words{
+      height: 70vh;
+    }
+    #letter-block{
+      padding: 15px 25px;
+    }
+    .letter-blocks-div{
+      display: flex;
+      margin-right: 5rem;
+    }
+    
+    .both-side-pillar{
+      /* height:55vh;
+      width: 55vw; */
+      height: 25rem;
+      width: 25rem;
+    }
+    .broad-pillar
+    {height:55vh;
+      width: 55vw; 
+      
+    }
+    .pillar-board-container{
+      margin-top:2.6rem;
+      height: 18rem;
+      border: 1px solid red;
+    }
+    .pillar-board p{
+      font-size: 1.1rem;
+    }
+    .arrow-btn{
+      height: 25vh;
+      width: 25vw;
+      right: -6rem;
+    }  
+    .arrow-text{
+      font-size: 2rem;
+    }
+  } 
+
+  @media (max-width: 768px) {
+    .heading-container{
+      width: 380px;
+      margin: auto;
+      transform: translateX(-10px);
+    }
+    
+    .input-div{
+      padding-bottom: 3.5rem;
+    }
+    .heading-plate{
+      width: 380px;
+    }
+    .wood-border{
+      height: 60px;
+      font-size: 1rem;
+    }
+    .wooden-text {
+      font-size: 3vmax;
+      margin-left:0.8rem;
+      margin-top: -120px;
+    }
+    .p-text{
+      font-size: 0.8rem;
+    }
+    .wood-button{
+      font-size: 1em;
+    }
+    
+    .both-side-pillar{
+      /* height:55vh;
+      width: 55vw; */
+      height: 20rem;
+      width: 20rem;
+    }
+    .broad-pillar
+    {height:55vh;
+      width: 55vw; 
+      
+    }
+    .pillar-board-container{
+      margin-top:2rem;
+      height: 38vh;
+    }
+    .pillar-board p{
+      font-size: 1.1rem;
+    }
+    .arrow-btn{
+      height: 8.5rem;
+      width: 8.5rem;
+      right: -4rem;
+    }  
+    .arrow-text{
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
   }
-  .wooden-text {
-    top: 90px;
-    font-size: 36px;
+
+  @media(max-width:576px){
+    .heading-container{
+      width: 280px;
+      margin: auto;
+      transform: translateX(-10px);
   }
+    .heading-plate{
+      width: 280px;
+    }
+    .wood-border{
+      font-size: 0.8em;
+    }
+    .wooden-text {
+      margin-top: -6.0rem;
+    }
+    .both-side-pillar{
+      /* height:55vh;
+      width: 55vw; */
+      height: 20rem;
+      width: 20rem;
+    }
+    .arrow-btn{
+      height: 7rem;
+      width: 7rem;
+      right: -3.4rem;
+    }  
+    .arrow-text{
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+    }
   }

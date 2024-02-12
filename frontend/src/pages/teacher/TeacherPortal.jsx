@@ -54,7 +54,7 @@ const TeacherPortal = () => {
       </div>
 
       {/* Code generation field and button  */}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+      <div className='input-div'>
         <input type="text" className='wood-border' value={gameCode} style={{ maxWidth: '30vw', cursor: 'not-allowed' }} />
         {isLoading ? (
           <span className="loading-indicator">Generating code...</span>
